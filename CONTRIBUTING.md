@@ -1,7 +1,6 @@
-Want to contribute back to this project and make this project a success? 
-Please follow the instructions below, we would love to get your feedback to 
-improve this
-project.
+Want to contribute back to buildtest and make this project a success? 
+Please follow the instructions below, we would love to get your feedback to help
+improve this project and be meaningful.
 
 ## Preparation
 
@@ -27,20 +26,27 @@ git clone git@github.com:YOUR\_GITHUB\_LOGIN/buildtest-configs.git
 
 ### Sync devel branch from upstream
 
-The devel from upstream will get Pull Requests from other contributors, inorder
- to sync your forked repo with upstream, run the commands below:
+The devel from upstream will get Pull Requests from other contributors, in-order
+ to sync your fork with upstream repo, first you need to add a new remote ``upstream``
+ that can be done as follows :
 
 ```bash
 cd buildtest-configs
 git remote add upstream git@github.com/HPC-buildtest/buildtest-configs.git
-git branch devel
-git checkout devel
-git fetch upstream
-git pull upstream devel
 ```
 
-Once the changes are pulled locally you can sync devel branch in your 
-fork with upstream
+Next we sync local ``devel`` branch with upstream. Make sure you are in ``devel`` branch before
+pulling changes
+
+```bash
+git branch devel
+git checkout devel
+git fetch upstream devel
+git pull -r upstream devel
+```
+
+Once the changes are pulled locally you can push the changes for devel branch to your 
+fork at GitHub
 
 ```bash
 git checkout devel
@@ -49,7 +55,7 @@ git push origin devel
 
 Do this same operation with master if you want to sync it with upstream repo
 
-### Branch
+### Feature Branch
 
 Please make sure to create a new branch when adding and new feature. Do not push 
 to **master** or **devel** branch on your fork or upstream. 
@@ -68,7 +74,7 @@ Once you are ready to push to your fork repo do the following
 git push origin featureX
 ```
 
-Once the branch is created in your fork, you can create a PR to the **devel** branch.
+Once the branch is created in your fork, you can create a PR to the ``devel`` branch.
 
 
 ### Review
